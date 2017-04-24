@@ -1,0 +1,17 @@
+D:\Projects\BRM\SALE\Implementation\REMIT\RemitXML\RemitXML\bin\Debug\RemitXML.exe.config
+D:\Projects\BRM\SALE\Implementation\REMIT\RemitXML\RemitXML\bin\Debug\RemitXML.exe
+D:\Projects\BRM\SALE\Implementation\REMIT\RemitXML\RemitXML\bin\Debug\RemitXML.pdb
+D:\Projects\BRM\SALE\Implementation\REMIT\RemitXML\RemitXML\obj\Debug\RemitXML.csprojResolveAssemblyReference.cache
+D:\Projects\BRM\SALE\Implementation\REMIT\RemitXML\RemitXML\obj\Debug\RemitXML.exe
+D:\Projects\BRM\SALE\Implementation\REMIT\RemitXML\RemitXML\obj\Debug\RemitXML.pdb
+D:\Projects\REMIT\RemitXML\RemitXML\bin\Debug\RemitXML.exe.config
+D:\Projects\REMIT\RemitXML\RemitXML\bin\Debug\RemitXML.exe
+D:\Projects\REMIT\RemitXML\RemitXML\bin\Debug\RemitXML.pdb
+D:\Projects\REMIT\RemitXML\RemitXML\obj\Debug\RemitXML.exe
+D:\Projects\REMIT\RemitXML\RemitXML\obj\Debug\RemitXML.pdb
+D:\RemitXML\RemitXML\bin\Debug\RemitXML.exe.config
+D:\RemitXML\RemitXML\obj\Debug\RemitXML.exe
+D:\RemitXML\RemitXML\obj\Debug\RemitXML.pdb
+D:\RemitXML\RemitXML\bin\Debug\RemitXML.exe
+D:\RemitXML\RemitXML\bin\Debug\RemitXML.pdb
+D:\RemitXML\RemitXML\obj\Debug\RemitXML.csprojResolveAssemblyReference.cache

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:common="http://www.acer.europa.eu/ceremp/common" targetNamespace="http://www.acer.europa.eu/ceremp/common" xmlns="http://www.w3.org/2001/XMLSchema">
+  <element name="header" type="common:HeaderType" />
+  <element name="fault" type="common:ArisFault" />
+  <complexType name="HeaderType">
+    <sequence minOccurs="1" maxOccurs="1">
+      <element minOccurs="0" maxOccurs="1" name="qualifiedDateTime" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="ReportingEntity">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="1" />
+            <maxLength value="120" />
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="1" maxOccurs="1" name="Identity">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="1" />
+            <maxLength value="120" />
+          </restriction>
+        </simpleType>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="ArisFault">
+    <sequence>
+      <element minOccurs="0" name="Code" type="string" />
+      <element minOccurs="0" name="D" type="string" />
+    </sequence>
+  </complexType>
+</schema>

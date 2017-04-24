@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:arisws="http://www.acer.europa.eu/aris/upload" xmlns:acer="http://www.acer.europa.eu/aris" xmlns:common="http://www.acer.europa.eu/ceremp/common" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:aris="http://www.acer.europa.eu/aris" name="aris-services" targetNamespace="http://www.acer.europa.eu/aris" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import schemaLocation="common_schema.xsd" namespace="http://www.acer.europa.eu/ceremp/common" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="aris_schema.xsd" namespace="http://www.acer.europa.eu/aris/upload" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UploadDataRequest">
+    <wsdl:part name="UploadDataRequest" element="arisws:UploadDataRequest" />
+  </wsdl:message>
+  <wsdl:message name="UploadDataResponse">
+    <wsdl:part name="UploadDataResponse" element="arisws:UploadDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ElaborationStatusRequest">
+    <wsdl:part name="ElaborationStatusRequest" element="arisws:ElaborationStatusRequest" />
+  </wsdl:message>
+  <wsdl:message name="ElaborationStatusResponse">
+    <wsdl:part name="ElaborationStatusResponse" element="arisws:ElaborationStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="NameConventionCheckRequest">
+    <wsdl:part name="NameConventionCheckRequest" element="arisws:NameConventionCheckRequest" />
+  </wsdl:message>
+  <wsdl:message name="NameConventionCheckResponse">
+    <wsdl:part name="NameConventionCheckResponse" element="arisws:NameConventionCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="FaultMessage">
+    <wsdl:part name="fault" element="common:fault" />
+  </wsdl:message>
+  <wsdl:portType name="aris-services">
+    <wsdl:operation name="UploadData">
+      <wsdl:input message="aris:UploadDataRequest" />
+      <wsdl:output message="aris:UploadDataResponse" />
+      <wsdl:fault name="fault" message="aris:FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ElaborationStatus">
+      <wsdl:input message="aris:ElaborationStatusRequest" />
+      <wsdl:output message="aris:ElaborationStatusResponse" />
+      <wsdl:fault name="fault" message="aris:FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NameConventionCheck">
+      <wsdl:input message="aris:NameConventionCheckRequest" />
+      <wsdl:output message="aris:NameConventionCheckResponse" />
+      <wsdl:fault name="fault" message="aris:FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="aris-servicesSOAP" type="aris:aris-services">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadData">
+      <soap:operation soapAction="http://www.acer.europa.eu/aris/UploadData" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ElaborationStatus">
+      <soap:operation soapAction="http://www.acer.europa.eu/aris/ElaborationStatus" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NameConventionCheck">
+      <soap:operation soapAction="http://www.acer.europa.eu/aris/NameConventionCheck" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="aris-services">
+    <wsdl:port name="aris-servicesSOAP" binding="aris:aris-servicesSOAP">
+      <soap:address location=" " />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

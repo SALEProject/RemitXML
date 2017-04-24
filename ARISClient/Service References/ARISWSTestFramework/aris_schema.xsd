@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:arisws="http://www.acer.europa.eu/aris/upload" xmlns:common="http://www.acer.europa.eu/ceremp/common" targetNamespace="http://www.acer.europa.eu/aris/upload" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="common_schema.xsd" namespace="http://www.acer.europa.eu/ceremp/common" />
+  <element name="UploadDataRequest" type="arisws:UploadDataRequestMessage" />
+  <element name="UploadDataResponse" type="arisws:UploadDataResponseMessage" />
+  <element name="ElaborationStatusRequest" type="arisws:ElaborationStatusRequestMessage" />
+  <element name="ElaborationStatusResponse" type="arisws:ElaborationStatusResponseMessage" />
+  <element name="NameConventionCheckRequest" type="arisws:NameConventionCheckRequestMessage" />
+  <element name="NameConventionCheckResponse" type="arisws:NameConventionCheckResponseMessage" />
+  <complexType name="UploadDataRequestMessage">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="header" type="common:HeaderType" />
+      <element minOccurs="1" maxOccurs="1" name="fileName">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="3" />
+            <maxLength value="500" />
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="1" maxOccurs="1" name="validationKey">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="3" />
+            <maxLength value="500" />
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="uploadedData" type="base64Binary" />
+    </sequence>
+  </complexType>
+  <complexType name="UploadDataResponseMessage">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="responseId">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="3" />
+            <maxLength value="500" />
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="1" maxOccurs="1" name="fileName">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="3" />
+            <maxLength value="500" />
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="1" maxOccurs="1" name="loadCode">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="3" />
+            <maxLength value="500" />
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="1" maxOccurs="1" name="validationKey">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="3" />
+            <maxLength value="500" />
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="1" maxOccurs="1" name="valid" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="validationErrorCode">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="1" />
+            <maxLength value="15" />
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="validationErrorDescription">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="3" />
+            <maxLength value="300" />
+          </restriction>
+        </simpleType>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="ElaborationStatusRequestMessage">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="header" type="common:HeaderType" />
+      <element minOccurs="1" maxOccurs="1" name="loadCode">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="3" />
+            <maxLength value="500" />
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="1" name="receiptType">
+        <annotation>
+          <documentation>A zip file will be provided regardless.
+            			The basic concept is that you can ask for receipt file/s intended for the RRM (RRM_RESTRICTED), receipts intended for MP
+            			(MP_RESTRICTED), or a zip containing every receipt (GLOBAL).
+            			The receipt provided nonetheless is linked to availability:
+            			- IF the receipt is relative to a technical failure, only RRM level receipt will be provided, regardless of the selection
+            			- IF on the other hand the receipt is relative to business rules validation failure or complete success, the provided receipt/s
+            			depends on the value provided in this tag. 
+            			</documentation>
+        </annotation>
+        <simpleType>
+          <restriction base="string">
+            <enumeration value="RRM_RESTRICTED" />
+            <enumeration value="MP_RESTRICTED" />
+            <enumeration value="GLOBAL" />
+          </restriction>
+        </simpleType>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="ElaborationStatusResponseMessage">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="responseId">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="3" />
+            <maxLength value="500" />
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="1" maxOccurs="1" name="loadCode">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="3" />
+            <maxLength value="500" />
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="1" name="result">
+        <simpleType>
+          <restriction base="string">
+            <enumeration value="COMPLETE" />
+            <enumeration value="FAILED" />
+            <enumeration value="ONGOING" />
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="receiptFile" type="base64Binary" />
+    </sequence>
+  </complexType>
+  <complexType name="NameConventionCheckRequestMessage">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="header" type="common:HeaderType" />
+      <element minOccurs="1" maxOccurs="1" name="fileName">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="3" />
+            <maxLength value="500" />
+            <pattern value="[0-9]{8}.*.xml.asc.pgp" />
+          </restriction>
+        </simpleType>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="NameConventionCheckResponseMessage">
+    <complexContent mixed="false">
+      <extension base="arisws:CheckResponseMessage" />
+    </complexContent>
+  </complexType>
+  <complexType name="CheckResponseMessage">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="responseId">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="3" />
+            <maxLength value="500" />
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="1" maxOccurs="1" name="fileName">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="3" />
+            <maxLength value="500" />
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="1" maxOccurs="1" name="validationKey">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="3" />
+            <maxLength value="500" />
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="1" maxOccurs="1" name="valid" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="validationErrorCode">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="1" />
+            <maxLength value="15" />
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="validationErrorDescription">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="3" />
+            <maxLength value="300" />
+          </restriction>
+        </simpleType>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

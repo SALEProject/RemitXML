@@ -1,0 +1,6 @@
+D:\Projects\BRM\Implementation\RemitXML\ARISClient\bin\Debug\ARISClient.exe.config
+D:\Projects\BRM\Implementation\RemitXML\ARISClient\bin\Debug\ARISClient.exe
+D:\Projects\BRM\Implementation\RemitXML\ARISClient\bin\Debug\ARISClient.pdb
+D:\Projects\BRM\Implementation\RemitXML\ARISClient\obj\Debug\ARISClient.csprojResolveAssemblyReference.cache
+D:\Projects\BRM\Implementation\RemitXML\ARISClient\obj\Debug\ARISClient.exe
+D:\Projects\BRM\Implementation\RemitXML\ARISClient\obj\Debug\ARISClient.pdb

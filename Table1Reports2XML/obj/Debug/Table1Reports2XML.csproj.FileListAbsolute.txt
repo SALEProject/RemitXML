@@ -1,0 +1,12 @@
+D:\RemitXML\Table1Reports2XML\obj\Debug\Table1Reports2XML.csprojResolveAssemblyReference.cache
+D:\RemitXML\Table1Reports2XML\bin\Debug\Table1Reports2XML.exe.config
+D:\RemitXML\Table1Reports2XML\bin\Debug\Table1Reports2XML.exe
+D:\RemitXML\Table1Reports2XML\bin\Debug\Table1Reports2XML.pdb
+D:\RemitXML\Table1Reports2XML\obj\Debug\Table1Reports2XML.exe
+D:\RemitXML\Table1Reports2XML\obj\Debug\Table1Reports2XML.pdb
+D:\Projects\BRM\Implementation\RemitXML\Table1Reports2XML\bin\Debug\Table1Reports2XML.exe.config
+D:\Projects\BRM\Implementation\RemitXML\Table1Reports2XML\bin\Debug\Table1Reports2XML.exe
+D:\Projects\BRM\Implementation\RemitXML\Table1Reports2XML\bin\Debug\Table1Reports2XML.pdb
+D:\Projects\BRM\Implementation\RemitXML\Table1Reports2XML\obj\Debug\Table1Reports2XML.csprojResolveAssemblyReference.cache
+D:\Projects\BRM\Implementation\RemitXML\Table1Reports2XML\obj\Debug\Table1Reports2XML.exe
+D:\Projects\BRM\Implementation\RemitXML\Table1Reports2XML\obj\Debug\Table1Reports2XML.pdb

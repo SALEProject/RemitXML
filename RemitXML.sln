@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemitXML", "RemitXML\RemitXML.csproj", "{2EDEC662-0425-4961-BBF2-37FA8A840F42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGStorageReports2XML", "NGStorageReports2XML\NGStorageReports2XML.csproj", "{6314884F-25F7-4336-9841-BF410D2DA7EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Table2Reports2XML", "Table2Reports2XML\Table2Reports2XML.csproj", "{82E88770-5A59-4AEE-BE25-266CD6310ED9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Table1Reports2XML", "Table1Reports2XML\Table1Reports2XML.csproj", "{2F157F2E-983D-4203-8B72-4D51796ADDB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARISClient", "ARISClient\ARISClient.csproj", "{512B3681-E00A-4F6F-AC3F-6A9432C02857}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EDEC662-0425-4961-BBF2-37FA8A840F42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EDEC662-0425-4961-BBF2-37FA8A840F42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EDEC662-0425-4961-BBF2-37FA8A840F42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EDEC662-0425-4961-BBF2-37FA8A840F42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6314884F-25F7-4336-9841-BF410D2DA7EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6314884F-25F7-4336-9841-BF410D2DA7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6314884F-25F7-4336-9841-BF410D2DA7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6314884F-25F7-4336-9841-BF410D2DA7EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82E88770-5A59-4AEE-BE25-266CD6310ED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82E88770-5A59-4AEE-BE25-266CD6310ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82E88770-5A59-4AEE-BE25-266CD6310ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82E88770-5A59-4AEE-BE25-266CD6310ED9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F157F2E-983D-4203-8B72-4D51796ADDB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F157F2E-983D-4203-8B72-4D51796ADDB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F157F2E-983D-4203-8B72-4D51796ADDB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F157F2E-983D-4203-8B72-4D51796ADDB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{512B3681-E00A-4F6F-AC3F-6A9432C02857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{512B3681-E00A-4F6F-AC3F-6A9432C02857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{512B3681-E00A-4F6F-AC3F-6A9432C02857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{512B3681-E00A-4F6F-AC3F-6A9432C02857}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

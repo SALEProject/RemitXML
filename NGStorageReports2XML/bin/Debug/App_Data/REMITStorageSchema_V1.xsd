@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.acer.europa.eu/REMIT/REMITStorageSchema_V1.xsd"
+	   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	   xmlns:sto="http://www.acer.europa.eu/REMIT/REMITStorageSchema_V1.xsd"
+	   elementFormDefault="qualified"
+	>
+				
+	<!-- Parent -->
+	<xs:element name="REMITStorageReport">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="reportingEntityIdentifier" type="sto:participantType" minOccurs="1" maxOccurs="1" /> <!-- ACER code for company submitting report -->
+				<xs:element name="submissionDateTime" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
+				<xs:element name="storageFacilityReport" type="sto:storageFacilityReport" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="storageParticipantActivityReport" type="sto:storageParticipantActivityReport" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="storageUnavailabilityReport" type="sto:storageUnavailabilityReport" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+		
+	<!-- storageFacilityReport related items -->
+	<xs:complexType name="storageFacilityReport">
+		<xs:sequence>
+			<xs:element name="gasDayStart" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="gasDayEnd" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="storageFacilityIdentifier" type="sto:participantType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="storageFacilityOperatorIdentifier" type="sto:participantType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="reportingEntityReferenceID" type="xs:string" minOccurs="0" maxOccurs="1" /> <!-- GIE RRM record level identifier to be included in ACER Return Receipt -->
+			<xs:element name="storageType" type="sto:gasStorageType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="storage" type="sto:quantityType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="injection" type="sto:quantityType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="withdrawal" type="sto:quantityType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="technicalCapacity" type="sto:quantityType" minOccurs="1" maxOccurs="1"/> 
+			<xs:element name="contractedCapacity" type="sto:quantityType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="availableCapacity" type="sto:quantityType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+
+	<!-- storageParticipantActivityReport related items -->
+	<xs:complexType name="storageParticipantActivityReport">
+        <xs:sequence>
+            <xs:element name="gasDayStart" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="gasDayEnd" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="storageFacilityIdentifier" type="sto:participantType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="storageFacilityOperatorIdentifier" type="sto:participantType" minOccurs="0" maxOccurs="1"/> <!-- Can be facility operator OR market participant -->
+			<xs:element name="marketParticipantIdentifier" type="sto:participantType" minOccurs="0" maxOccurs="1"/> <!-- Can be facility operator OR market participant -->
+			<xs:element name="reportingEntityReferenceID" type="xs:string" minOccurs="0" maxOccurs="1" /> <!-- GIE RRM record level identifier to be included in ACER Return Receipt -->
+            <xs:element name="storage" type="sto:quantityType" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType> 
+
+
+	<!-- storageUnavailabilityReport related items -->
+	<xs:complexType name="storageUnavailabilityReport">
+		<xs:sequence>
+			<xs:element name="unavailabilityNotificationTimestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="storageFacilityIdentifier" type="sto:participantType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="storageFacilityOperatorIdentifier" type="sto:participantType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="reportingEntityReferenceID" type="xs:string" minOccurs="0" maxOccurs="1" /> <!-- GIE RRM record level identifier to be included in ACER Return Receipt -->
+			<xs:element name="unavailabilityStart" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="unavailabilityEnd" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="unavailabilityEndFlag" type="sto:endFlag" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="unavailableVolume" type="sto:quantityType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="unavailableInjection" type="sto:quantityType" minOccurs="0" maxOccurs="1"/> <!-- Mandatory if relevant -->
+			<xs:element name="unavailableWithdrawal" type="sto:quantityType" minOccurs="0" maxOccurs="1"/> <!-- Mandatory if relevant -->
+			<xs:element name="unavailabilityType" type="sto:unavailabilityType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="unavailabilityDescription" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="endFlag">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Estimate"/>
+			<xs:enumeration value="Confirmed"/>
+		</xs:restriction>
+	</xs:simpleType>
+		
+	<xs:complexType name="quantityType">
+		<xs:sequence>
+			<xs:element name="value" type="sto:number" minOccurs="1" maxOccurs="1" />
+			<xs:element name="unit" type="sto:quantityUnitType" minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="unavailabilityType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Planned"/> 
+			<xs:enumeration value="Unplanned"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="quantityUnitType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="cm"/>
+			<xs:enumeration value="cm/d"/>
+			<xs:enumeration value="mcm"/>
+			<xs:enumeration value="mcm/d"/>
+			<xs:enumeration value="kWh"/>
+			<xs:enumeration value="kWh/h"/>
+			<xs:enumeration value="kWh/d"/>
+			<xs:enumeration value="GW"/>
+			<xs:enumeration value="GWh"/>
+			<xs:enumeration value="GWh/h"/>
+			<xs:enumeration value="GWh/d"/>
+			<xs:enumeration value="MW"/>
+			<xs:enumeration value="MWh"/>
+			<xs:enumeration value="MWh/h"/>
+			<xs:enumeration value="MWh/d"/>
+			<xs:enumeration value="TWh"/>
+			<xs:enumeration value="Therm/d"/>
+			<xs:enumeration value="kTherm/d"/>
+			<xs:enumeration value="MTherm/d"/>
+			<xs:enumeration value="Therm"/>
+			<xs:enumeration value="kTherm"/>
+			<xs:enumeration value="MTherm"/>
+			<xs:enumeration value="%"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="eicCode">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="16"/>
+			<xs:minLength value="16"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="number">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="20"/>
+			<xs:fractionDigits value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="gasStorageType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DSR">
+				<xs:annotation>
+					<xs:documentation>Underground Storage In A Depleted Gas Reservoir</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ASR">
+				<xs:annotation>
+					<xs:documentation>Underground Storage In An Aquifer Gas Reservoir</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ASF">
+				<xs:annotation>
+					<xs:documentation>Underground Storage In Salt Formation</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SGL">
+				<xs:annotation>
+					<xs:documentation>Storage As LNG</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PPC">
+				<xs:annotation>
+					<xs:documentation>Storage In Existing Pipeline Capacity</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GHT">
+				<xs:annotation>
+					<xs:documentation>Above Ground Storage In Gas Holder</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SRC">
+				<xs:annotation>
+					<xs:documentation>Underground Storage In A Rock Cavern</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="participantType">
+		<xs:choice minOccurs="1" maxOccurs="1">
+			<xs:element name="acerCode" type="sto:acerCode" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="eicCode" type="sto:eicCode" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="leiCode" type="sto:leiCode" minOccurs="0" maxOccurs="1"/>
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:simpleType name="acerCode">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="12"/>
+			<xs:minLength value="12"/>
+			<xs:pattern value="[A-Za-z0-9_]+\.[A-Z][A-Z]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="leiCode">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+			<xs:minLength value="20"/>
+			<xs:pattern value="[A-Za-z0-9_]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+</xs:schema>

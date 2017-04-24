@@ -1,0 +1,12 @@
+D:\RemitXML\NGStorageReports2XML\bin\Debug\NGStorageReports2XML.exe.config
+D:\RemitXML\NGStorageReports2XML\bin\Debug\NGStorageReports2XML.exe
+D:\RemitXML\NGStorageReports2XML\bin\Debug\NGStorageReports2XML.pdb
+D:\RemitXML\NGStorageReports2XML\obj\Debug\NGStorageReports2XML.csprojResolveAssemblyReference.cache
+D:\RemitXML\NGStorageReports2XML\obj\Debug\NGStorageReports2XML.exe
+D:\RemitXML\NGStorageReports2XML\obj\Debug\NGStorageReports2XML.pdb
+D:\Projects\BRM\Implementation\RemitXML\NGStorageReports2XML\bin\Debug\NGStorageReports2XML.exe.config
+D:\Projects\BRM\Implementation\RemitXML\NGStorageReports2XML\bin\Debug\NGStorageReports2XML.exe
+D:\Projects\BRM\Implementation\RemitXML\NGStorageReports2XML\bin\Debug\NGStorageReports2XML.pdb
+D:\Projects\BRM\Implementation\RemitXML\NGStorageReports2XML\obj\Debug\NGStorageReports2XML.csprojResolveAssemblyReference.cache
+D:\Projects\BRM\Implementation\RemitXML\NGStorageReports2XML\obj\Debug\NGStorageReports2XML.exe
+D:\Projects\BRM\Implementation\RemitXML\NGStorageReports2XML\obj\Debug\NGStorageReports2XML.pdb
